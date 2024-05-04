@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function squareMyNumber(number) {
+            var square = document.getElementById('sqr').value;
+            Sqrt = square ** 2;
+            alert("Square of the number is" + Sqrt)
+        }
+
+        function factorial() {
+            var a = document.getElementById('fact').value;
+            var i = a;
+            var fact = 1;
+            while (i > 1) {
+                fact *= i;
+                i = i - 1;
+            }
+            alert('Factorial of the number is' + fact);
+        }
+
+        function openwin() {
+            var s = document.getElementById("sname").value;
+            document.getElementById("sname").innerHTML = s;
+
+            var m = document.getElementById("marks").value;
+            document.getElementById("marks").innerHTML = m;
+            console.log(s)
+            console.log(m)
+            alert("Name enetered is: " + s + " and your marks are: " + m)
+            window.open("details.html")
+        }
+
+        function counting(str, letter) {
+            let count = 0;
+
+            // looping through the items
+            for (let i = 0; i < str.length; i++) {
+
+                // check if the character is at that position
+                if (str.charAt(i) == letter) {
+                    count += 1;
+                }
+            }
+            return count;
+        }
+
+
+        const string = prompt('Enter a string: ');
+        const letterToCheck = prompt('Enter a letter to check: ');
+        const result = counting(string, letterToCheck);
+        alert(result)
+        console.log(result);
+    </script>
+</head>
+
+<body>
+    <input type="text" name="square" id="sqr"> Enter a number for squaring</input>
+    <br><br>
+    <button type="submit" id="squareno" onclick="squareMyNumber()"> Square </button>
+    <br><br>
+
+    <input type="text" name="fact" id="fact"> Enter a number for factorial
+    <br><br>
+    <button type="submit" id="factorial" onclick="factorial()"> Factorial</button>
+    <br><br>
+
+    <input type="text" name="sname" id="sname"> Enter your name
+    <input type="number" name="marks" id="marks"> Enter your marks <br><br>
+    <button type="submit" id="student" onclick="openwin()"> Submit</button>
+    <br><br>
+
+    <input type="text" name="counts" id="counts"> Enter a string
+    <br>
+    <br>
+    <button type="submit" id="counting" onclick="counting()"> Count </button>
+</body>
+
+</html>
